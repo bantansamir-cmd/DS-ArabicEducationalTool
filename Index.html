@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>أداة المرجع المهني لمعلمي متلازمة داون — النسخة النهائية | إعداد: جاسر بنتن</title>
+<style>
+:root{--primary:#1a365d;--primary-light:#2c5282;--accent:#c53030;--bg:#f7fafc;--card:#fff;--text:#1a202c;--muted:#4a5568;--border:#e2e8f0;--success:#276749;--warning:#975a16;--info:#2b6cb0;--radius:10px;--shadow:0 4px 6px -1px rgba(0,0,0,.1)}
+[data-theme=dark]{--primary:#90cdf4;--primary-light:#63b3ed;--accent:#fc8181;--bg:#1a202c;--card:#2d3748;--text:#e2e8f0;--muted:#a0aec0;--border:#4a5568;--success:#68d391;--warning:#f6ad55;--info:#63b3ed;--shadow:0 4px 6px -1px rgba(0,0,0,.4)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Tahoma,'Arabic Typesetting','Traditional Arabic',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;transition:background .25s,color .25s}
+.header{background:linear-gradient(135deg,#1a365d,#2c5282);color:#fff;padding:1rem;position:relative;z-index:100}
+[data-theme=dark] .header{background:linear-gradient(135deg,#1a202c,#2d3748)}
+.header-inner{max-width:1100px;margin:0 auto}
+.header h1{font-size:1.25rem;font-weight:700;line-height:1.35}
+.header .subtitle{font-size:.85rem;opacity:.93;margin-top:.2rem}
+.header .meta{font-size:.75rem;opacity:.85;margin-top:.25rem}
+.header-actions{display:flex;gap:.5rem;margin-top:.65rem;flex-wrap:wrap}
+.header-actions button,.header-actions input{font-size:.8rem;padding:.4rem .7rem;border-radius:6px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;cursor:pointer}
+.header-actions input{min-width:150px;flex:1;max-width:240px}
+.mobile-nav-wrap{display:none;background:var(--card);padding:.55rem .75rem;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:95}
+.mobile-nav-wrap label{font-size:.75rem;font-weight:600;color:var(--muted);display:block;margin-bottom:.25rem}
+.mobile-nav-wrap select{width:100%;padding:.6rem .7rem;font-size:.95rem;font-weight:600;border:2px solid var(--primary);border-radius:8px;background:var(--bg);color:var(--text)}
+.nav-tabs{display:flex;flex-wrap:nowrap;gap:.2rem;max-width:1100px;margin:0 auto;padding:.5rem;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:90;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-tabs button{background:transparent;border:none;padding:.45rem .6rem;font-size:.72rem;font-weight:600;color:var(--muted);cursor:pointer;border-radius:6px;white-space:nowrap;flex-shrink:0}
+.nav-tabs button:hover{background:var(--border);color:var(--primary)}
+.nav-tabs button.active{background:var(--bg);color:var(--primary);box-shadow:0 2px 0 var(--accent)}
+.progress-bar-wrap{max-width:1100px;margin:0 auto;padding:.35rem .75rem;background:var(--card);border-bottom:1px solid var(--border);font-size:.75rem;color:var(--muted);display:flex;align-items:center;gap:.6rem}
+.progress-bar{flex:1;height:6px;background:var(--border);border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:var(--success);width:0%;transition:width .3s}
+.main{max-width:1100px;margin:0 auto;padding:1rem .8rem 3rem}
+.tab-content{display:none}.tab-content.active{display:block;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.section-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.2rem 1.05rem;margin-bottom:1.15rem;border:1px solid var(--border)}
+.section-card h2{font-size:1.25rem;color:var(--primary);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:2px solid var(--accent);display:inline-block;line-height:1.35}
+.section-card h3{font-size:1.05rem;color:var(--primary-light);margin:1.25rem 0 .55rem}
+.section-card h4{font-size:.98rem;margin:1rem 0 .4rem}
+p{margin-bottom:.8rem}ul,ol{margin:.5rem 0 .95rem 1.4rem}li{margin-bottom:.35rem}
+.lead{font-size:.98rem;color:var(--muted);margin-bottom:1rem}
+.cite{font-size:.8rem;color:var(--muted);font-style:italic;border-right:3px solid var(--info);padding-right:.7rem;margin:.7rem 0 1rem}
+.term{background:rgba(43,108,176,.08);border:1px solid var(--info);border-radius:6px;padding:.75rem .9rem;margin:.85rem 0;font-size:.93rem}
+.term strong{color:var(--info)}
+.box-info,.box-warning,.box-success,.box-accent,.box-red{padding:.9rem 1rem;margin:.85rem 0;border-radius:6px 0 0 6px;font-size:.93rem}
+.box-info{background:rgba(43,108,176,.1);border-right:4px solid var(--info)}
+.box-warning{background:rgba(151,90,22,.1);border-right:4px solid var(--warning)}
+.box-success{background:rgba(39,103,73,.1);border-right:4px solid var(--success)}
+.box-accent{background:rgba(197,48,48,.08);border-right:4px solid var(--accent)}
+.box-red{background:rgba(197,48,48,.12);border-right:4px solid #c53030}
+table{width:100%;border-collapse:collapse;margin:1rem 0 1.2rem;font-size:.85rem;display:block;overflow-x:auto}
+table thead,table tbody,table tr{display:table;width:100%;table-layout:fixed}
+th,td{border:1px solid var(--border);padding:.55rem .6rem;text-align:right;vertical-align:top}
+th{background:#1a365d;color:#fff;font-weight:600;font-size:.8rem}
+[data-theme=dark] th{background:#2c5282}
+tr:nth-child(even){background:rgba(0,0,0,.03)}
+.steps{counter-reset:step;list-style:none;margin-right:0;margin-left:0;padding:0}
+.steps li{position:relative;padding:.75rem .85rem .75rem .85rem;padding-right:2.9rem;margin-bottom:.6rem;background:rgba(0,0,0,.03);border-radius:8px;border:1px solid var(--border);font-size:.93rem}
+.steps li::before{counter-increment:step;content:counter(step);position:absolute;right:.6rem;top:.7rem;width:1.55rem;height:1.55rem;background:#1a365d;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem}
+.example{background:rgba(39,103,73,.08);border:1px dashed var(--success);border-radius:8px;padding:.9rem 1rem;margin:.8rem 0 1.1rem;font-size:.93rem}
+.example::before{content:"مثال تطبيقي";display:block;font-weight:700;color:var(--success);font-size:.78rem;margin-bottom:.35rem}
+.exercise{background:rgba(151,90,22,.08);border:1px solid var(--warning);border-radius:8px;padding:1rem;margin:1rem 0}
+.exercise h4{color:var(--warning);margin-top:0}
+.toolbar{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.9rem}
+.toolbar button{font-size:.78rem;padding:.35rem .7rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer}
+.notes-area{width:100%;min-height:75px;padding:.6rem;border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);font-size:.9rem;margin-top:.5rem;resize:vertical}
+.notes-label{font-size:.82rem;font-weight:600;color:var(--muted);margin-top:1.1rem;display:block}
+.checklist label{display:flex;align-items:flex-start;gap:.5rem;padding:.4rem 0;cursor:pointer;font-size:.93rem}
+.checklist input{margin-top:.3rem;flex-shrink:0}
+.template-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:.9rem 0;font-size:.9rem;white-space:pre-wrap;position:relative}
+.copy-btn{position:absolute;top:.5rem;left:.5rem;font-size:.75rem;padding:.25rem .5rem;border-radius:4px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0}
+@media(max-width:600px){.compare-grid{grid-template-columns:1fr}}
+.compare-col{border-radius:8px;padding:.9rem;font-size:.9rem}
+.compare-bad{background:rgba(197,48,48,.1);border:1px solid var(--accent)}
+.compare-good{background:rgba(39,103,73,.1);border:1px solid var(--success)}
+.compare-col h4{margin-top:0;font-size:.9rem}
+.case-box{border:1px solid var(--border);border-radius:8px;padding:1.05rem;margin:1.15rem 0;background:var(--bg)}
+.case-box h4{margin-top:0;color:var(--primary)}
+.flash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem;margin:1rem 0}
+.flashcard{perspective:1000px;height:160px;cursor:pointer}
+.flash-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flashcard.flipped .flash-inner{transform:rotateY(180deg)}
+.flash-front,.flash-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:.8rem;text-align:center;font-size:.9rem;box-shadow:var(--shadow);border:1px solid var(--border)}
+.flash-front{background:linear-gradient(145deg,#1a365d,#2c5282);color:#fff;font-weight:600}
+.flash-back{background:var(--card);color:var(--text);transform:rotateY(180deg);font-size:.82rem;overflow-y:auto}
+.quiz-q{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;margin-bottom:1.1rem;box-shadow:var(--shadow)}
+.quiz-q h4{margin:0 0 .6rem;color:var(--primary);font-size:.98rem}
+.quiz-opts label{display:block;padding:.5rem .65rem;margin:.3rem 0;border-radius:6px;cursor:pointer;font-size:.92rem}
+.quiz-opts input{margin-left:.5rem}
+.quiz-feedback{margin-top:.6rem;padding:.55rem .75rem;border-radius:6px;display:none;font-size:.88rem}
+.quiz-feedback.correct{background:rgba(39,103,73,.2);color:var(--success);display:block}
+.quiz-feedback.incorrect{background:rgba(197,48,48,.15);color:var(--accent);display:block}
+.btn{display:inline-block;background:#1a365d;color:#fff;border:none;padding:.55rem 1.1rem;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;margin-top:.45rem}
+.footer{background:#1a365d;color:rgba(255,255,255,.9);text-align:center;padding:1.25rem 1rem;font-size:.82rem;line-height:1.55}
+[data-theme=dark] .footer{background:#1a202c}
+.search-results{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.8rem;margin-bottom:1rem;display:none;font-size:.9rem}
+.search-results.visible{display:block}
+.search-results a{display:block;padding:.35rem 0;color:var(--primary);text-decoration:none;cursor:pointer}
+.quick-ref{background:var(--card);border:2px solid var(--primary);border-radius:10px;padding:1.05rem;margin:.9rem 0;font-size:.9rem}
+.quick-ref h3{margin-top:0;color:var(--primary);font-size:1.02rem}
+@media(max-width:768px){.nav-tabs{display:none}.mobile-nav-wrap{display:block}.header h1{font-size:1.12rem}.section-card{padding:1.05rem .9rem}.flash-grid{grid-template-columns:1fr}}
+@media(min-width:769px){.mobile-nav-wrap{display:none}.nav-tabs{display:flex}}
+@media print{.header-actions,.nav-tabs,.mobile-nav-wrap,.progress-bar-wrap,.toolbar,.notes-area,.notes-label{display:none!important}.tab-content{display:block!important;page-break-before:always}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <h1>أداة المرجع المهني لمعلمي متلازمة داون</h1>
+    <div class="subtitle">النسخة النهائية المتقدمة · علمية · منهجية · تطبيقية · لجميع الفئات العمرية</div>
+    <div class="meta">إعداد: جاسر بنتن &nbsp;|&nbsp; مبنية على نيوتن (2004) · تشيتي وداوسون (2010) · فارagher وروبرتسون وبيرد / DSi (2020)</div>
+    <div class="header-actions">
+      <input type="search" id="globalSearch" placeholder="ابحث داخل الأداة..." oninput="runSearch(this.value)">
+      <button onclick="toggleDark()">وضع ليلي / نهاري</button>
+      <button onclick="printCurrent()">طباعة القسم</button>
+      <button onclick="exportNotes()">تصدير ملاحظاتي</button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav-wrap">
+  <label for="mobileSelect">الانتقال إلى القسم:</label>
+  <select id="mobileSelect" onchange="switchTab(this.value)">
+    <option value="intro">1. المقدمة والأسس</option>
+    <option value="understanding">2. فهم متلازمة داون</option>
+    <option value="characteristics">3. خصائص التعلم</option>
+    <option value="rights">4. الحقوق والدمج</option>
+    <option value="leading">5. قيادة البيئات الدامجة</option>
+    <option value="teaching">6. إرشادات التدريس</option>
+    <option value="ages">7. الممارسة حسب العمر</option>
+    <option value="health">8. الاعتبارات الصحية</option>
+    <option value="strategies">9. الاستراتيجيات العملية</option>
+    <option value="iep">10. التخطيط وخطط التعليم الفردية</option>
+    <option value="collaboration">11. التعاون مع الأسر والفرق</option>
+    <option value="toolkit">12. حقيبة أدوات الصف</option>
+    <option value="cases">13. دراسات الحالة</option>
+    <option value="redflags">14. إشارات التحذير</option>
+    <option value="pdpath">15. مسار التطوير المهني</option>
+    <option value="glossary">16. المسرد</option>
+    <option value="mcq">17. التقييم الذاتي</option>
+    <option value="flashcards">18. البطاقات القلّابة</option>
+    <option value="quickref">19. مرجع سريع</option>
+    <option value="references">20. المراجع</option>
+  </select>
+</div>
+
+<nav class="nav-tabs">
+  <button class="active" data-tab="intro" onclick="switchTab('intro')">1. المقدمة</button>
+  <button data-tab="understanding" onclick="switchTab('understanding')">2. الفهم</button>
+  <button data-tab="characteristics" onclick="switchTab('characteristics')">3. الخصائص</button>
+  <button data-tab="rights" onclick="switchTab('rights')">4. الحقوق</button>
+  <button data-tab="leading" onclick="switchTab('leading')">5. القيادة</button>
+  <button data-tab="teaching" onclick="switchTab('teaching')">6. التدريس</button>
+  <button data-tab="ages" onclick="switchTab('ages')">7. الأعمار</button>
+  <button data-tab="health" onclick="switchTab('health')">8. الصحة</button>
+  <button data-tab="strategies" onclick="switchTab('strategies')">9. الاستراتيجيات</button>
+  <button data-tab="iep" onclick="switchTab('iep')">10. الخطط</button>
+  <button data-tab="collaboration" onclick="switchTab('collaboration')">11. التعاون</button>
+  <button data-tab="toolkit" onclick="switchTab('toolkit')">12. الأدوات</button>
+  <button data-tab="cases" onclick="switchTab('cases')">13. الحالات</button>
+  <button data-tab="redflags" onclick="switchTab('redflags')">14. التحذير</button>
+  <button data-tab="pdpath" onclick="switchTab('pdpath')">15. التطوير</button>
+  <button data-tab="glossary" onclick="switchTab('glossary')">16. المسرد</button>
+  <button data-tab="mcq" onclick="switchTab('mcq')">17. التقييم</button>
+  <button data-tab="flashcards" onclick="switchTab('flashcards')">18. البطاقات</button>
+  <button data-tab="quickref" onclick="switchTab('quickref')">19. سريع</button>
+  <button data-tab="references" onclick="switchTab('references')">20. المراجع</button>
+</nav>
+
+<div class="progress-bar-wrap"><span>التقدم:</span><div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div><span id="progressText">0/20</span></div>
+
+<main class="main">
+<div class="search-results" id="searchResults"></div>
+
+<!-- 1 -->
+<section id="intro" class="tab-content active" data-section="intro">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('intro')">تعيين كمقروء</button></div>
+<h2>1. المقدمة والأسس المهنية</h2>
+<p class="lead">هذه الأداة مرجع مهني علمي ومنهجي شامل لمعلمي التربية الخاصة، ومعلمي الصفوف العادية، وأخصائيي الدعم التعليمي، وقادة المدارس، والمعالجين، والفرق متعددة التخصصات الذين يعملون مع المتعلمين من ذوي متلازمة داون عبر مراحل العمر: من التدخل المبكر إلى مرحلة الرشد والتعلم مدى الحياة.</p>
+<p>الأشخاص ذوو متلازمة داون هم أفراد أولاً. يشتركون في حالة جينية تنتج نمطاً مميزاً من السمات الجسدية ودرجة من صعوبات التعلم تتفاوت بشكل واسع من شخص لآخر. ليسوا «مصابين» أو «ضحايا». مع التوقعات العالية، والتعديلات المناسبة، والفرص الدامجة، والدعم التعاوني، يمكنهم أن يزدهروا ويستمروا في التعلم طوال حياتهم.</p>
+<p class="cite">— مقتبس ومطوّر من نيوتن (2004) وFaragher وآخرين (2020).</p>
+
+<h3>1.1 الغرض من الأداة</h3>
+<p>صُممت الأداة لتكون مرجعاً مهنياً أساسياً قائماً، وليس ملخصاً مختصراً. وهي تجمع ثلاثة مصادر أساسية وأدلة بحثية مكملة، لتمكّن المربي من:</p>
+<ul>
+<li>فهم الأساس الجيني والنمائي لمتلازمة داون بعيداً عن الأساطير القديمة.</li>
+<li>التعرف على الخصائص الاحتمالية للتعلم (الرؤية، السمع، اللغة، الذاكرة، الحركة، الصحة) وتحويلها إلى تعديلات صفية.</li>
+<li>تطبيق مبادئ التعليم الدامج بما يتوافق مع اتفاقية الأمم المتحدة لحقوق الأشخاص ذوي الإعاقة (المادة 24).</li>
+<li>التخطيط والتدريس والتقييم والمراجعة وفق عمليات تعاونية مبنية على الأدلة.</li>
+<li>العمل بفعالية مع الأسر والفرق متعددة التخصصات.</li>
+<li>الوصول إلى نماذج عملية، وقوائم تحقق، ودراسات حالة، وأدوات تقييم ذاتي.</li>
+</ul>
+
+<h3>1.2 المصادر الأساسية</h3>
+<ul>
+<li><strong>نيوتن (2004)</strong> — <em>دليل متلازمة داون: دليل عملي للآباء ومقدمي الرعاية</em> (بالاشتراك مع جمعية متلازمة داون). يقدم منظورات طبية ونمائية وتعليمية وعبر مراحل العمر.</li>
+<li><strong>تشيتي وداوسون (2010)</strong> — <em>متلازمة داون: الدليل الأساسي</em>. إرشادات عملية تشمل التشخيص، السنوات المبكرة، التعليم، الصحة، حياة الأسرة، والمال، والاجتماعات المهنية، والانتقال إلى الرشد.</li>
+<li><strong>Faragher وروبرتسون وبيرد (2020)</strong> — <em>الإرشادات الدولية لتعليم المتعلمين ذوي متلازمة داون</em> (Down Syndrome International). إطار مبني على البحث والسياسة والممارسة، منظم حول القيادة والتدريس والتعلم، ومتوافق مع اتفاقية الأمم المتحدة والمقصد الرابع من أهداف التنمية المستدامة.</li>
+</ul>
+
+<h3>1.3 المبادئ الموجهة للمعلمين</h3>
+<div class="box-info">
+<ol>
+<li><strong>لغة الشخص أولاً والهوية:</strong> يُقال دائماً «شخص / متعلم / طالب من ذوي متلازمة داون». يُتجنَّب وصف الشخص بالحالة، وتُرفض المصطلحات القديمة المهينة.</li>
+<li><strong>التوقعات العالية:</strong> التعلم يستمر طوال الحياة. الادعاء بأن التعلم يتوقف في أواخر المراهقة قد دُحض بالبحث وإنجازات كثير من البالغين.</li>
+<li><strong>التعليم الدامج حق:</strong> بموجب المادة 24 من اتفاقية الأمم المتحدة، يعني التعليم الدامج أن جميع الطلاب يُرحَّب بهم في بيئتهم التعليمية المحلية، ويُدرَّسون في صفوف مناسبة لأعمارهم، ويحصلون على الدعم الذي يحتاجونه للمشاركة والتعلم.</li>
+<li><strong>الفروق الفردية:</strong> كل متعلم فريد. الخصائص الاحتمالية ليست حتمية بالدرجة نفسها لدى الجميع. غياب التقدم يستدعي أولاً مراجعة التدريس والبيئة.</li>
+<li><strong>ممارسة مبنية على الأدلة وتعاونية:</strong> تُستمد القرارات من البحث، والخبرة المهنية، ومعرفة الأسرة، وصوت المتعلم نفسه.</li>
+<li><strong>التعلم مدى الحياة:</strong> فرص التعلم الرسمية وغير الرسمية بعد المرحلة الثانوية حق وضرورة.</li>
+</ol>
+</div>
+
+<h3>1.4 السياق التاريخي</h3>
+<p>في عام 1866 وصف جون لانغدون داون مجموعة من الأشخاص في مؤسسة كانوا يشتركون في سمات مميزة. وضمن المعتقدات العلمية للعصر الفيكتوري استخدم مصطلحات عنصرية دخلت لاحقاً اللغة الشائعة وارتبطت بالرعاية المؤسسية. تلك المصطلحات لم تعد مقبولة.</p>
+<p>في عام 1959 حدد جيروم لوجون الأساس الصبغي: نسخة إضافية من الكروموسوم 21 (تثلث الصبغي 21). ولاحقاً رُبطت السمات بمنطقة صغيرة نسبياً على الذراع الطويلة للكروموسوم 21 (حوالي 21q22.1–21q22.3) تضم تقديراً 50–100 جيناً. الفهم العلمي يتقدم؛ وقد يصبح يوماً ما ممكناً التخفيف من آثار الجينات الزائدة النشاط، لكن ذلك لا يزال أمراً بعيد المدى.</p>
+<p>إلى جانب التقدم العلمي تغيّرت المواقف التعليمية والاجتماعية. كثير من الأطفال ذوي متلازمة داون يلتحقون اليوم بالتعليم العام مع دعم؛ وكثير من البالغين يعيشون حياة شبه مستقلة ويستمرون في التعلم. مهمة المهني إزالة الحواجز وتوفير التعديلات والتدريس عالي الجودة التي تجعل تلك الفرص حقيقة.</p>
+
+<h3>1.5 كيفية استخدام النسخة النهائية</h3>
+<p>استخدم شريط التبويبات (على الحاسوب/الجهاز اللوحي) أو القائمة المنسدلة (على الجوال). كل قسم رئيسي يحتوي شرحاً علمياً موسّعاً، وجداول، وخطوات مهنية متسلسلة، وأمثلة تطبيقية، وتمارين، وإشارات إلى المصادر. الميزات تشمل: البحث الداخلي، الوضع الليلي، طباعة القسم، ملاحظات شخصية تُحفظ في المتصفح، تتبع التقدم، نماذج قابلة للنسخ، قوائم تحقق، دراسات حالة، إشارات تحذير، ومسار تطوير مهني.</p>
+<label class="notes-label">ملاحظاتك الشخصية:</label>
+<textarea class="notes-area" id="notes-intro" onchange="saveNote('intro',this.value)" placeholder="اكتب تأملاتك أو نقاط العمل..."></textarea>
+</div>
+</section>
+
+<!-- 2 -->
+<section id="understanding" class="tab-content" data-section="understanding">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('understanding')">تعيين كمقروء</button></div>
+<h2>2. فهم متلازمة داون: الجينات والحدوث والحقائق الأساسية</h2>
+
+<h3>2.1 التعريف</h3>
+<p>متلازمة داون حالة جينية ناتجة عن وجود مادة جينية زائدة من الكروموسوم 21. وهي أكثر الأسباب الجينية المعروفة لصعوبات التعلم شيوعاً. <strong>ليست مرضاً</strong>. الأطفال والبالغون ذوو متلازمة داون أشخاص يشتركون في سمات جسدية معينة ويعيشون درجة من صعوبات التعلم تتراوح من الخفيفة إلى الأكثر شدة. السمات الجسدية ليست مؤشراً موثوقاً على القدرة المعرفية أو إمكانية التعلم.</p>
+<p class="cite">— نيوتن (2004)؛ تشيتي وداوسون (2010).</p>
+
+<h3>2.2 أنواع متلازمة داون</h3>
+<div class="term"><strong>تثلث الصبغي 21 (عدم الانفصال):</strong> حوالي 95٪ من الحالات. خطأ في انقسام الخلية (غالباً أثناء الانقسام الاختزالي في تكوين البويضة أو الحيوان المنوي) ينتج عنه ثلاث نسخ كاملة من الكروموسوم 21 في كل خلية من الجسم.</div>
+<div class="term"><strong>متلازمة داون الانتقالية (Translocation):</strong> مادة الكروموسوم 21 الزائدة مرتبطة بكروموسوم آخر (غالباً 14). تمثل نسبة أقل من الحالات. في بعض الأسر يحمل أحد الوالدين انتقالاً متوازناً، وقد تكون الحالة موروثة؛ لذا يُعد الاستشارة الوراثية ضرورية لمعلومات خطر التكرار.</div>
+<div class="term"><strong>متلازمة داون الفسيفسائية (Mosaic):</strong> بعض الخلايا تحمل 46 كروموسوماً طبيعياً وبعضها 47 (مع النسخة الإضافية). تختلف نسبة الخلايا المتثلثة. قد يكون المظهر السريري أخف لدى بعض الأفراد، لكن ذلك ليس دائماً ولا ينبغي افتراضه.</div>
+
+<h3>2.3 مقدمة في الجينات البشرية للمعلمين</h3>
+<p>الحمض النووي (DNA) هو الحلزون المزدوج الذي يحمل الشفرة الوراثية. تسلسل القواعد (أدينين، ثايمين، سايتوسين، غوانين) يحدد البروتينات التي تُنتج. الجينات مقاطع من الحمض النووي ترمّز بروتينات بنيوية أو إنزيمات تنظم كيمياء الخلية. أي اضطراب في بنية الحمض أو كميته قد يؤثر على بنية الخلية ووظيفتها.</p>
+<p>معظم الحمض النووي معبأ في نواة الخلية على شكل كروموسومات. لدى الإنسان عادة 23 زوجاً (46 كروموسوماً): 22 زوجاً جسدياً وزوج واحد من كروموسومات الجنس (XX أو XY). الكروموسوم 21 من أصغر الكروموسومات. لكل كروموسوم ذراع قصيرة (p) وذراع طويلة (q). تقنيات التلوين (Banding) تسمح بتحديد المناطق بدقة أكبر.</p>
+<p>ترتبط سمات متلازمة داون أساساً بمنطقة صغيرة نسبياً على الذراع الطويلة للكروموسوم 21 (21q22.1–21q22.3). تضم هذه المنطقة تقديراً 50–100 جيناً — جزء صغير من الجينوم البشري، لكنه كافٍ لإنتاج النمط النمائي المميز عند وجود ثلاث نسخ.</p>
+<p><strong>الانقسام المتساوي (Mitosis)</strong> هو انقسام الخلايا العادي: تتضاعف الكروموسومات وتنفصل لتحصل كل خلية ابنة على مجموعة كاملة. <strong>الانقسام الاختزالي (Meiosis)</strong> هو الانقسام الذي ينتج البويضات والحيوانات المنوية بـ 23 كروموسوماً حتى يعود العدد إلى 46 عند الإخصاب. أخطاء انفصال الكروموسومات أثناء الانقسام الاختزالي (عدم الانفصال) هي السبب المعتاد لتثلث الصبغي 21.</p>
+<p class="cite">— نيوتن (2004)، الفصل 2.</p>
+
+<h3>2.4 الحدوث والمخاطر ومتوسط العمر</h3>
+<table>
+<thead><tr><th>الجانب</th><th>معلومات للمعلمين</th></tr></thead>
+<tbody>
+<tr><td>الحدوث</td><td>يُذكر تاريخياً حوالي 800–1000 ولادة حية سنوياً في المملكة المتحدة؛ وتشير أرقام أحدث غالباً إلى نحو 750. تختلف الأرقام حسب السكان وتوزيع أعمار الأمهات وممارسات الفحص قبل الولادة.</td></tr>
+<tr><td>عمر الأم</td><td>يزداد الخطر مع تقدم عمر الأم، خاصة بعد منتصف الثلاثينيات. ومع ذلك يولد معظم الأطفال ذوي متلازمة داون لأمهات أصغر سناً لأنهن ينجبن عدداً أكبر من الأطفال إجمالاً.</td></tr>
+<tr><td>خطر التكرار</td><td>يعتمد على الآلية (عدم انفصال مقابل انتقال). بعد التشخيص تُقدَّم للأسر استشارة وراثية. لا ينبغي للمعلمين تقديم نصائح حول خطر التكرار بأنفسهم.</td></tr>
+<tr><td>متوسط العمر</td><td>تحسن تحسناً كبيراً مع الرعاية الطبية الأفضل والدمج الاجتماعي. كثير من الأشخاص يعيشون الآن إلى الخمسينيات وما بعدها؛ ويُقدَّر أن واحداً من كل عشرة يعيش إلى السبعينيات. يمكن توقع مرحلة رشد طويلة؛ والتعلم مدى الحياة مهم.</td></tr>
+</tbody>
+</table>
+
+<h3>2.5 السمات الجسدية وخطر القولبة</h3>
+<p>قد تشمل السمات المميزة: ملامح وجه أكثر استواءً، ميلان الشق الجفني للأعلى، طيات جفنية، أنف صغير بجسر عريض، أذنان أصغر، خط عرضي واحد في راحة اليد (لدى البعض)، نقص التوتر العضلي، وقامة أقصر. التعبير يختلف. يبرز التشابه العائلي بسرعة. <strong>هذه السمات لا تتنبأ بالقدرة المعرفية أو إمكانية التعلم.</strong></p>
+<div class="box-warning">
+<strong>تذكير مهني:</strong> الصور النمطية التاريخية صورت الأشخاص ذوي متلازمة داون على أنهم دائماً ودودون وسعيدون وسلبيون ومطيعون. البحث والممارسة يُظهران أن هذا أسطورة. الشخصية فردية. بعض الدراسات تشير إلى أن البالغين ذوي متلازمة داون قد يظهرون مشكلات سلوكية أقل من بالغين آخرين من ذوي صعوبات التعلم، وأن المهارات الاجتماعية قد تتطور نسبياً بسهولة لدى بعض الأطفال؛ لكن كل شخص فريد ويجب التعرف عليه كفرد.
+</div>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-understanding" onchange="saveNote('understanding',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 3 -->
+<section id="characteristics" class="tab-content" data-section="characteristics">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('characteristics')">تعيين كمقروء</button></div>
+<h2>3. خصائص التعلم لدى المتعلمين ذوي متلازمة داون (موسّع)</h2>
+<p class="lead">المتعلمون ذوو متلازمة داون أفراد لهم نقاط قوة وتحديات متنوعة. جميعهم قادرون على التعلم ويستمرون فيه طوال حياتهم. أسطورة توقف التعلم في المراهقة قد دُحضت. الخصائص أدناه اتجاهات احتمالية؛ ليست موجودة بالدرجة نفسها لدى كل متعلم. غياب النجاح يُعزى كثيراً إلى نقص التعديلات لا إلى عجز أصيل.</p>
+<p class="cite">— Faragher وآخرون (2020)، القسم 2.2؛ نيوتن (2004).</p>
+
+<h3>3.1 الرؤية</h3>
+<p>اضطرابات الرؤية شائعة. كثير من المتعلمين يحتاجون نظارات تصحيحية. إعتام عدسة العين أكثر تكراراً. حتى مع النظارات الصحيحة قد تبقى حدة الإبصار وحساسية التباين أقل من الأقران. المواد التي تبدو واضحة للطلاب العاديين قد تشكل عقبة كبيرة.</p>
+<div class="box-info">
+<strong>تطبيقات عملية مفصّلة للمعلمين:</strong>
+<ul>
+<li>استخدم مواد عالية التباين: حبر أسود على ورق أبيض أو كريمي؛ تجنّب النصوص الرمادية الباهتة.</li>
+<li>غلّظ الخطوط الخافتة في إطارات الكتابة وخطوط الأعداد والرسوم.</li>
+<li>كبّر النص والصور الرئيسية عند الحاجة؛ لا تعتمد على التفاصيل البصرية الدقيقة للمعلومات الحرجة.</li>
+<li>اجلس المتعلم في موضع مناسب بالنسبة للسبورة أو الشاشة، مع مراعاة النظارات والإضاءة.</li>
+<li>تأكد من أن المراجعات الطبية للعيون محدّثة وأن النظارات تُرتدى كما وُصفت أثناء التعلم.</li>
+<li>عند العرض استخدم إشارات وأشياء كبيرة واضحة لا حركات أصابع دقيقة فقط.</li>
+</ul>
+</div>
+
+<h3>3.2 السمع</h3>
+<p>يعاني أغلب الأفراد من درجة ما من فقدان السمع في مرحلة ما. الفقدان التوصيلي الناتج عن التهاب الأذن الوسطى مع الانصباب («أذن صمغية») شائع جداً في الطفولة (معدلات تصل في بعض الدراسات إلى 93٪ من الأطفال الصغار و68٪ من أطفال المدارس). الفقدان الحسي العصبي يصبح أكثر بروزاً في الرشد.</p>
+<p>الفقدان التوصيلي في السنوات المبكرة قد يؤثر بشكل أكبر على تطور الكلام واللغة لاحقاً لدى المتعلمين ذوي متلازمة داون. «الأذن الصمغية» متقلبة: قد يسمع المتعلم جيداً يوماً ويسمع بصعوبة في اليوم التالي، غالباً دون حمى أو علامات ظاهرة. من المناسب غالباً أن يفترض المعلم احتمال ضعف السمع ويعلّم وفق ذلك.</p>
+<div class="box-warning">
+<strong>ملاحظة تدريسية حاسمة:</strong>
+<ul>
+<li>قدّم المعلومات بطرق متعددة (دعم بصري مع الكلام).</li>
+<li>واجه المتعلم؛ تجنّب الكلام وأنت ملتفت إلى السبورة.</li>
+<li>قلّل الضوضاء الخلفية قدر الإمكان؛ فكّر في الجلوس التفضيلي.</li>
+<li>تحقق من الفهم عبر الأداء أو المنتج، لا بسؤال «هل فهمت؟» فقط.</li>
+<li>تعاون مع قسم السمع والأسرة؛ ادعم استخدام أي سماعات أو استراتيجيات موصوفة.</li>
+<li>انتبه لتغيّر الاستجابة من يوم لآخر فقد يشير إلى هبوط مؤقت في السمع.</li>
+</ul>
+</div>
+
+<h3>3.3 الكلام واللغة والتواصل</h3>
+<p>تطور الكلام واللغة متأخر عادة عن العمر الزمني. اللغة الاستقبالية (الفهم) غالباً أقوى من اللغة التعبيرية (الكلام). النطق يتأثر بنقص التوتر وبنية الفم وأي فقدان سمعي. المفردات والقواعد تنمو لكن ببطء وبأنماط مميزة. كثير من المتعلمين يستفيدون من علاج النطق واللغة مدمجاً مع استراتيجيات صفية تجعل التواصل أولوية.</p>
+<ul>
+<li>علّم المفردات الأساسية مسبقاً بصور أو أشياء أو إشارات قبل بدء الموضوع.</li>
+<li>استخدم الدعم البصري باستمرار: جداول بصرية، لوحات اختيار، إشارات كلمات مفتاحية (مثل ماكاتون) عند الاتفاق مع أخصائي النطق والأسرة.</li>
+<li>امنح وقت معالجة واستجابة وافراً (غالباً 5–10 ثوانٍ أو أكثر بعد السؤال).</li>
+<li>نمذج اللغة الصحيحة دون تصحيح متواصل يقطع تدفق التواصل.</li>
+<li>وفّر أسباباً حقيقية للتواصل (اختيارات، طلبات، تعليقات) لا تدريباً آلياً فقط.</li>
+<li>ادعم السرد والتسلسل بخرائط قصصية بصرية ومواد محسوسة.</li>
+<li>تعاون مع أخصائي النطق واللغة ليتعزز عمل الصف والعلاج معاً.</li>
+</ul>
+
+<h3>3.4 الذاكرة والإدراك</h3>
+<p>من السمات الموثقة نسبياً: قوة نسبية في المعالجة البصرية والذاكرة البصرية مقارنة بالذاكرة السمعية-اللفظية قصيرة المدى. الذاكرة العاملة، خاصة المكوّن الصوتي، غالباً مجال صعوبة مهم. الذاكرة طويلة المدى والتعلم الإجرائي قد يكونان نقاط قوة نسبية عند تقديم المادة بشكل مناسب وممارستها على مدى كافٍ.</p>
+<ul>
+<li>قدّم المعلومات بصرياً وإلى جانب اللفظ.</li>
+<li>جزّئ التعليمات والمعلومات إلى خطوات صغيرة.</li>
+<li>استخدم الممارسة المتباعدة عبر الأيام والأسابيع لا التكرار المكثف وحده.</li>
+<li>علّم استراتيجيات الذاكرة صراحة (إعادة التسميع، التصوير الذهني، التجزيء، المعينات الخارجية).</li>
+<li>قلّل الحمل المتزامن (لا تطلب الاستماع والقراءة والكتابة في آن واحد دون دعم).</li>
+<li>أعد زيارة التعلم الأساسي؛ لا تفترض أن أداءً ناجحاً واحداً يعني إتقاناً.</li>
+</ul>
+
+<h3>3.5 المهارات الحركية الدقيقة والإجمالية</h3>
+<p>نقص التوتر وزيادة مرونة المفاصل يؤثران عادة على التطور الحركي. المعالم الحركية الإجمالية (الجلوس، المشي، التوازن) متأخرة عادة. المهارات الدقيقة اللازمة للكتابة والقص والربط تتطور ببطء. تدخل العلاج الوظيفي، والأدوات المعدّلة (مقابض أقلام، ألواح مائلة، مقصات معدّلة)، وطرق التسجيل البديلة (كاتب، معالجة نصوص، تحويل كلام إلى نص) مناسبة غالباً مع الاستمرار في تنمية الكتابة اليدوية حيث تفيد.</p>
+
+<h3>3.6 القضايا الصحية وإدراك الألم</h3>
+<p>تحدث حالات صحية معينة بمعدلات أعلى (انظر القسم 8). قد لا يُبلَّغ عن الألم أو المرض بالطرق المعتادة. التغيّر السلوكي — الانسحاب، التهيج، تراجع المهارات، أو وضعيات غير معتادة — قد يكون الإشارة الأساسية. التعب شائع ويجب أخذه في الحسبان في طول اليوم الدراسي وكثافته وفي واجبات المنزل.</p>
+
+<h3>3.7 جدول ملخص لتداعيات التعلم</h3>
+<table>
+<thead><tr><th>المجال</th><th>التحدي المعتاد</th><th>التعديلات المبنية على الأدلة</th></tr></thead>
+<tbody>
+<tr><td>الرؤية</td><td>حدة إبصار وتباين أقل</td><td>تباين عالٍ، تكبير، جلوس مناسب، فحوصات منتظمة، ارتداء النظارات</td></tr>
+<tr><td>السمع</td><td>فقدان توصيلي متقلب؛ لاحقاً حسي عصبي</td><td>افترض احتمالاً؛ تقديم متعدد الوسائط؛ واجه المتعلم؛ قلّل الضوضاء</td></tr>
+<tr><td>اللغة</td><td>تأخر تعبيري؛ نطق؛ وقت معالجة</td><td>دعم بصري؛ تعليم مسبق؛ وقت انتظار؛ تعاون مع أخصائي النطق</td></tr>
+<tr><td>الذاكرة</td><td>ذاكرة سمعية-لفظية قصيرة / عاملة</td><td>عرض بصري؛ تجزيء؛ استرجاع متباعد؛ استراتيجيات صريحة</td></tr>
+<tr><td>الحركة</td><td>نقص توتر؛ تأخر دقيق وإجمالي</td><td>أدوات معدّلة؛ تسجيل بديل؛ علاج وظيفي؛ فترات حركة</td></tr>
+<tr><td>المعالجة</td><td>معالجة أبطأ؛ حاجة لتدريس صريح</td><td>نمذجة واضحة؛ سقالات؛ توقعات عالية مع دعم مناسب</td></tr>
+<tr><td>الصحة / الطاقة</td><td>تعب؛ معدلات أعلى لبعض الحالات</td><td>خطّط لليوم حسب الطاقة؛ راقب التغيّر السلوكي كإشارة محتملة</td></tr>
+</tbody>
+</table>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-characteristics" onchange="saveNote('characteristics',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 4 -->
+<section id="rights" class="tab-content" data-section="rights">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('rights')">تعيين كمقروء</button></div>
+<h2>4. إطار الحقوق والتعليم الدامج</h2>
+<p class="lead">تستند الإرشادات الدولية (Faragher وآخرون، 2020) صراحة إلى اتفاقية الأمم المتحدة لحقوق الأشخاص ذوي الإعاقة (2006)، وخاصة المادة 24 (التعليم)، وإلى الهدف الرابع من أهداف التنمية المستدامة.</p>
+<h3>4.1 التعليم الدامج</h3>
+<p>تعرّف اليونسكو (2019) الدمج بأنه «عملية تحويلية تضمن المشاركة الكاملة والوصول إلى فرص تعلم جيدة لجميع الأطفال والشباب والبالغين، مع احترام التنوع وتقديره والقضاء على جميع أشكال التمييز في التعليم ومن خلاله». يعني التعليم الدامج أن جميع الطلاب يلتحقون ويُرحَّب بهم في بيئتهم التعليمية المحلية ويُدعمون ليتعلموا ويساهموا ويشاركوا في كل جوانبها. ويعني التعليم المدرسي الدامج أن الجميع يُرحَّب بهم في مدارس الحي ويُدرَّسون في صفوف مناسبة لأعمارهم مع الدعم المناسب.</p>
+<div class="box-accent">
+<strong>تمييزات لجنة الاتفاقية (2016):</strong>
+<ul>
+<li><em>الاستبعاد</em> — منع الطلاب أو حرمانهم من الوصول إلى التعليم بأي شكل.</li>
+<li><em>الفصل</em> — تعليم في بيئات منفصلة مصممة لإعاقات معينة، معزولة عن الطلاب دون إعاقة.</li>
+<li><em>الدمج الشكلي (Integration)</em> — وضع في بيئات عامة بشرط أن يتكيف الطالب مع المتطلبات القائمة.</li>
+<li><em>الدمج الحقيقي (Inclusion)</em> — تحويل النظام ليتكيف مع تنوع المتعلمين.</li>
+</ul>
+المدارس والصفوف الخاصة ليست دامجة بهذه التعريفات، مع إدراك أن بعض السياقات قد لا تملك حالياً خياراً آخر وأن جوانب الإرشادات قد تُطبَّق طموحاً.
+</div>
+<p>تشير الأبحاث إلى أن الطلاب ذوي الإعاقة المتعلمين في صفوف التعليم العام يتفوقون على من تعلّموا في بيئات منفصلة. والأبحاث الخاصة بمتلازمة داون تدعم ذلك. التطور الاجتماعي والانفعالي أيضاً أكبر في البيئات الدامجة.</p>
+<h3>4.2 التعلم مدى الحياة</h3>
+<p>التعلم نشاط مدى الحياة. متوسط العمر الآن يمتد إلى مرحلة الرشد. الادعاءات بتوقف التعلم في أواخر المراهقة دُحضت. البالغون لهم الحق في مواصلة التعلم الرسمي وغير الرسمي بعد المرحلة الثانوية.</p>
+<h3>4.3 تكافؤ الفرص</h3>
+<p>لا ينبغي أن تُبنى قرارات المنهج فقط على تنبؤات ضيقة بما «سيحتاجه في الرشد» بطريقة تحدّ من الفرص (مثل سحب متعلم من صف لغة أو حرمانه من العلوم). للمتعلمين الحق في منهج واسع ومتوازن وأنشطة لاصفية على قدم المساواة مع الآخرين.</p>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-rights" onchange="saveNote('rights',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 5 -->
+<section id="leading" class="tab-content" data-section="leading">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('leading')">تعيين كمقروء</button></div>
+<h2>5. إرشادات قيادة البيئات التعليمية الدامجة</h2>
+<p>القيادة تحدد روح المدرسة وثقافتها. الثقافة الدامجة لا تتحقق بإجراءات تقنية وحدها؛ تتطلب غرضاً مشتركاً، ورسائل متسقة، وتأهيلاً دقيقاً للموظفين، وتعلمًا مهنياً مستمراً.</p>
+<h3>خطوات تأهيل الموظفين الجدد</h3>
+<ol class="steps">
+<li><strong>إحاطة بالسياسة والحقوق:</strong> قدّم سياسة الدمج في المدرسة وحق التعليم الدامج بموجب الاتفاقية. أوضح أن تعليم المتعلمين ذوي متلازمة داون مسؤولية <em>جميع</em> أعضاء الهيئة التدريسية لا المختصين فقط.</li>
+<li><strong>الرؤية والقيم:</strong> أوضح كيف يُمارَس الدمج يومياً في الصفوف والممرات والساحات والتجمعات والأنشطة.</li>
+<li><strong>توجيه خاص بالمتلازمة:</strong> قدّم معلومات دقيقة عن خصائص التعلم والتعديلات المبنية على الأدلة. تجنّب الأساطير وتوقعات منخفضة.</li>
+<li><strong>إدارة الصف وحل المشكلات التعاوني:</strong> درّب على استراتيجيات تفيد جميع المتعلمين وعلى مقاربة تعاونية لتحديات الدمج.</li>
+<li><strong>دعم ومتابعة مستمرة:</strong> اربط الموظفين الجدد بممارسين ذوي خبرة؛ خطّط لتعلم مهني لاحق؛ ابنِ مجتمعات ممارسة.</li>
+<li><strong>شراكة الأسرة:</strong> قدّم التوقعات وآليات العمل المحترم مع الأسر، بما في ذلك توقيت الاجتماعات وقنوات التواصل.</li>
+</ol>
+<div class="box-success"><strong>مساعدو الدعم التعليمي:</strong> ذوو قيمة عندما يكون الدور واضحاً والتدريب متوفراً والتركيز على الاستقلالية والدمج. الاعتماد المفرط على مرافقة فردية دائمة قد يقلل التفاعل مع الأقران ويضعف مسؤولية المعلم عن تقدم المتعلم. يُفضَّل تيسير التعاون بين الأقران والدعم القصير الهادف داخل مجتمع الصف.</div>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-leading" onchange="saveNote('leading',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 6 -->
+<section id="teaching" class="tab-content" data-section="teaching">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('teaching')">تعيين كمقروء</button></div>
+<h2>6. إرشادات التدريس</h2>
+<p>الممارسة الدامجة الفعالة تقوم على مواقف المعلمين. المواقف السلبية قد تؤثر في استجابة الأقران. يحتاج المعلمون والقادة إلى فرص لمواجهة المعتقدات المحدودة وتجربة نجاح الدمج. التعليم الدامج ليس إجراءً تقنياً فحسب؛ يتطلب حل مشكلات تعاونياً. العمل على دمج جميع المتعلمين يحسّن النتائج للجميع.</p>
+<h3>استراتيجيات التدريس الأساسية</h3>
+<ul>
+<li>علّم المفردات والمفاهيم الأساسية مسبقاً بدعم بصري وأشياء حقيقية قبل الدرس الرئيسي.</li>
+<li>قدّم المعلومات بطرق متعددة: بصري + لفظي + تجريبي / حركي.</li>
+<li>جزّئ المهام وقدّم تعليمات متسلسلة واضحة مع دعم بصري.</li>
+<li>أدرج وقت انتظار/معالجة متعمداً بعد الأسئلة والتعليمات.</li>
+<li>استخدم الممارسة الاسترجاعية المتباعدة عبر الأيام والأسابيع.</li>
+<li>قدّم نماذج وسقالات وتحريراً تدريجياً للمسؤولية (أفعل ← نفعل معاً ← تفعل أنت).</li>
+<li>وفّر وسائل بديلة لتسجيل التعلم وإظهاره (كاتب، تقنية، شفهي، عملي).</li>
+<li>راقب التعب وخطّط لكثافة الجلسات ومدتها وفق ذلك.</li>
+<li>علّم المهارات الاجتماعية والدعوة الذاتية صراحة ضمن سياقات الصف والمدرسة الطبيعية.</li>
+<li>تحقق من الفهم عبر الفعل والمنتج لا التأكيد اللفظي وحده.</li>
+</ul>
+<div class="exercise">
+<h4>مراجعة درس دامج (بعد أي درس)</h4>
+<ol>
+<li>هل استُخدم دعم بصري للمفردات والتعليمات؟</li>
+<li>هل أُدرج وقت معالجة/انتظار؟</li>
+<li>هل استطاع متعلم بحدة إبصار أقل وسمع متقلب الوصول إلى المحتوى الحرج؟</li>
+<li>هل توفرت طرق تسجيل بديلة؟</li>
+<li>هل شجّع الدرس تفاعل الأقران بدل الاعتماد الكلي على الراشد؟</li>
+<li>كيف رُصد التقدم نحو الأهداف الأكاديمية والاجتماعية؟</li>
+<li>ماذا سأغيّر في المرة القادمة؟</li>
+</ol>
+</div>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-teaching" onchange="saveNote('teaching',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 7 -->
+<section id="ages" class="tab-content" data-section="ages">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('ages')">تعيين كمقروء</button></div>
+<h2>7. الممارسة التعليمية حسب المرحلة العمرية</h2>
+<h3>7.1 ما قبل المدرسة — التدخل المبكر والانتقال</h3>
+<p>خدمات التدخل المبكر (علاج، دعم نمائي، إرشاد للأسرة) تضع أسس التواصل والحركة والتعلم المبكر. يجب التخطيط للانتقال إلى المدرسة بشكل تعاوني مع نقل المعلومات والزيارات وإعداد الطفل والجهة المستقبِلة.</p>
+<ol class="steps">
+<li>حدد نقاط القوة والاهتمامات واحتياجات الدعم الحالية.</li>
+<li>رتّب اجتماعات مشتركة بين فريق التدخل المبكر والأسرة والمدرسة.</li>
+<li>أعد ملفاً مختصراً / جواز متعلم للمعلمين المستقبِلين.</li>
+<li>خطّط لزيارات متدرجة وبداية متدرجة عند الحاجة.</li>
+<li>تأكد من حداثة المعلومات الطبية والعلاجية ومعرفة إجراءات الطوارئ والرعاية اليومية.</li>
+<li>أنشئ قنوات تواصل مستمرة بين المنزل والمدرسة والمعالجين.</li>
+</ol>
+<h3>7.2 المرحلة الابتدائية</h3>
+<p>التركيز على العضوية الكاملة في مجتمع الصف، والوصول إلى المنهج الكامل مع تعديلات، وتنمية منهجية للقراءة والكتابة والحساب بطرق تستثمر القوة البصرية، والدمج الاجتماعي. يجب أن تتناول الخطط الفردية الأهداف الأكاديمية والاجتماعية. علاقات الأقران والصداقات لا تقل أهمية عن التقدم الأكاديمي.</p>
+<h3>7.3 المرحلة الثانوية</h3>
+<p>البيئات الثانوية أكثر تعقيداً تنظيمياً. يصبح استمرار الدعم، والتواصل الواضح عبر فريق المعلمين، وتعليم مهارات التنظيم والدعوة الذاتية أمراً حاسماً. يجب حماية اتساع المنهج؛ لا يُسحب المتعلمون تلقائياً من مواد على أساس افتراضات عن الفائدة المستقبلية. يبدأ التخطيط للانتقال إلى ما بعد المدرسة مبكراً ويُشرك الشاب مركزياً.</p>
+<h3>7.4 ما بعد المدرسة — التعليم العالي والمهني والعمل والتعلم مدى الحياة</h3>
+<p>قد تشمل الخيارات كليات التعليم المستمر، والتدريب المهني، والعمل المدعوم، والتلمذة المهنية، والتعلم المجتمعي. يعتمد النجاح على الإعداد المسبق، والتعديلات المعقولة المستمرة، والاعتراف باستمرار قدرة التعلم. للبالغين ذوي متلازمة داون الحق في فرص التعلم مدى الحياة.</p>
+<table>
+<thead><tr><th>المرحلة</th><th>أولويات المعلمين</th></tr></thead>
+<tbody>
+<tr><td>السنوات المبكرة</td><td>التواصل المبكر، الأسس الحركية، التعلم القائم على اللعب، شراكة الأسرة، انتقال مخطط</td></tr>
+<tr><td>الابتدائي</td><td>عضوية الصف الكاملة، قراءة وكتابة وحساب عبر القوة البصرية، دمج اجتماعي، خطط فردية تعاونية</td></tr>
+<tr><td>الثانوي</td><td>تنسيق بين المعلمين، دعوة ذاتية، وصول لمنهج واسع، تخطيط انتقال، علاقات أقران</td></tr>
+<tr><td>ما بعد المدرسة / الرشد</td><td>تعليم وتدريب مستمر، دعم التوظيف، مهارات العيش المستقل، وصول للتعلم مدى الحياة</td></tr>
+</tbody>
+</table>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-ages" onchange="saveNote('ages',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 8 -->
+<section id="health" class="tab-content" data-section="health">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('health')">تعيين كمقروء</button></div>
+<h2>8. الاعتبارات الصحية ذات الصلة بالمعلمين</h2>
+<p class="lead">المعلمون ليسوا ممارسين طبيين، لكنهم يحتاجون معرفة كافية بالحالات الشائعة المرتبطة ليتعرفوا على العلامات، ويدعموا خطط الإدارة، ويتعاونوا مع الأسر والمهنيين الصحيين. اتبع دائماً النصيحة الطبية الفردية وبروتوكولات الصحة المدرسية.</p>
+<table>
+<thead><tr><th>الحالة / المجال</th><th>الأهمية للمدرسة</th><th>التداعيات التعليمية</th></tr></thead>
+<tbody>
+<tr><td>أمراض القلب الخلقية</td><td>قد تحتاج جراحة في الرضاعة؛ آثار متبقية أو متابعة</td><td>الوعي بتحمل الجهد، التعب، أي قيود نشاط موثّقة</td></tr>
+<tr><td>السمع (أذن صمغية؛ لاحقاً حسي عصبي)</td><td>شائع جداً؛ متقلب في الطفولة</td><td>تدريس متعدد الوسائط؛ جلوس تفضيلي؛ مراقبة الاستجابة للصوت</td></tr>
+<tr><td>الرؤية</td><td>انتشار مرتفع</td><td>ارتداء النظارات؛ مواد عالية التباين؛ فحوصات منتظمة</td></tr>
+<tr><td>قصور الغدة الدرقية</td><td>انتشار أعلى؛ قد يظهر في أي عمر</td><td>الخمول أو التباطؤ المعرفي قد يكون له سبب طبي — مراجعة طبية</td></tr>
+<tr><td>انقطاع النفس الانسدادي أثناء النوم</td><td>أكثر شيوعاً</td><td>نعاس نهاري، صعوبات انتباه؛ تقييم طبي عند الاشتباه</td></tr>
+<tr><td>عدم استقرار الفقرات العنقية</td><td>مهم للتربية البدنية وبعض الأنشطة</td><td>اتبع التصريح الطبي الفردي وأي قيود</td></tr>
+<tr><td>الجهاز الهضمي / التغذية</td><td>بعض المتعلمين لديهم قضايا مستمرة</td><td>خطط غذائية، وضعيات، وقت للوجبات حسب الحاجة</td></tr>
+<tr><td>قابلية العدوى</td><td>قد تكون أعلى لدى بعض الأفراد</td><td>روتين نظافة؛ وعي أثناء تفشي الأمراض</td></tr>
+</tbody>
+</table>
+<div class="box-warning"><strong>الألم والتغيّر السلوكي:</strong> قد لا يبلّغ الأفراد عن الألم بالطرق المعتادة. التغيّرات غير المفسَّرة في السلوك أو المزاج أو المشاركة يجب أن تدفع إلى التفكير في أسباب طبية أو حسية، بالشراكة مع الأسرة والمهنيين الصحيين.</div>
+<h3>مسؤوليات المعلم</h3>
+<ol class="steps">
+<li>تأكد من وجود خطط رعاية صحية فردية محدّثة وميسّرة للموظفين المعنيين.</li>
+<li>اعرف العلامات التي تتطلب إجراءً فورياً وفق الخطة الفردية.</li>
+<li>ادعم الالتزام بالأدوية واستخدام السماعات والنظارات وبرامج العلاج خلال اليوم المدرسي.</li>
+<li>أبلغ عن التغيّرات الملاحظة (تعب، استجابة سمعية، سلوك) فوراً للأسرة وجهة الاتصال الطبية.</li>
+<li>شارك في المراجعات متعددة التخصصات عند الدعوة، وقدّم ملاحظات تعليمية.</li>
+<li>حافظ على السرية مع ضمان وصول المعلومات المناسبة لمن يحتاجها.</li>
+</ol>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-health" onchange="saveNote('health',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 9 -->
+<section id="strategies" class="tab-content" data-section="strategies">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('strategies')">تعيين كمقروء</button></div>
+<h2>9. الاستراتيجيات التدريسية العملية (موسّعة، بما في ذلك الكلام واللغة)</h2>
+<h3>9.1 استثمار نقاط القوة البصرية</h3>
+<ul>
+<li>جداول بصرية وجدول اليوم والدرس.</li>
+<li>منظمات رسومية وخرائط ذهنية وبطاقات مفردات مصورة.</li>
+<li>العرض والنمذجة قبل أو مع الشرح اللفظي.</li>
+<li>كلمات مفتاحية مكتوبة ترافق التعليمات المنطوقة.</li>
+<li>نماذج فيديو للروتين والمهارات متعددة الخطوات.</li>
+<li>مواد عالية التباين ومكبّرة كمعيار عند احتمال ضعف الرؤية.</li>
+</ul>
+<h3>9.2 دعم الذاكرة العاملة والمعالجة</h3>
+<ul>
+<li>قدّم تعليماً واحداً في كل مرة، أو سلسلة قصيرة مع دعم بصري.</li>
+<li>امنح وقتاً إضافياً للمعالجة قبل توقع الاستجابة.</li>
+<li>استخدم الممارسة الاسترجاعية المتباعدة عبر الأيام والأسابيع.</li>
+<li>علّم استراتيجيات الذاكرة صراحة.</li>
+<li>قلّل الحمل المعرفي المتزامن.</li>
+<li>أعد زيارة التعلم الأساسي؛ لا تفترض أن نجاحاً واحداً يعني إتقاناً.</li>
+</ul>
+<h3>9.3 استراتيجيات الكلام واللغة (مفصّلة)</h3>
+<div class="box-info">
+<ul>
+<li>قلّل الضوضاء الخلفية؛ واجه المتعلم؛ تكلم بوضوح وبوتيرة معتدلة.</li>
+<li>علّم المفردات الأساسية مسبقاً بصور أو أشياء أو إشارات.</li>
+<li>استخدم إشارات الكلمات المفتاحية (مثل ماكاتون) باستمرار عند الاتفاق مع أخصائي النطق والأسرة؛ اربط الإشارة بالكلام.</li>
+<li>امنح وقت انتظار وافراً (غالباً 5–10 ثوانٍ) بعد السؤال أو التلميح.</li>
+<li>نمذج اللغة الصحيحة دون تصحيح متواصل يقطع تدفق التواصل.</li>
+<li>وفّر فرص تواصل حقيقية (اختيارات، طلبات، تعليقات، مشاركة أخبار) لا تدريباً آلياً فقط.</li>
+<li>ادعم مهارات السرد بخرائط قصصية بصرية وبطاقات تسلسل ومواد محسوسة.</li>
+<li>تعاون عن كثب مع أخصائي النطق واللغة؛ شارك أهداف الصف والتقدم.</li>
+<li>انتبه لتغيّر الاستجابة اليومي الذي قد يعكس هبوطاً سمعياً مؤقتاً.</li>
+</ul>
+</div>
+<h3>9.4 القراءة والكتابة</h3>
+<p>كثير من المتعلمين يمكنهم تطوير قراءة وكتابة وظيفية، وفي بعض الحالات أكثر تقدماً. يُوصى بمقاربات تجمع التعرف البصري على الكلمات الكاملة مع الصوتيات المنهجية، وعمل الفهم اللغوي، وتجارب قراءة وكتابة ذات معنى. يُتوقَّع التقدم ويُدرَّس منهجياً لا يُفترض أنه محدود. يمكن أن تسير طرق التسجيل البديلة جنباً إلى جنب مع تنمية الكتابة اليدوية.</p>
+<h3>9.5 الحساب</h3>
+<p>يمكن دعم الإحساس بالعدد والعد والحساب المبكر عبر مواد محسوسة وتمثيلات بصرية وتعليم متسلسل بعناية. يجب ربط العمل الرمزي المجرد مراراً بالنماذج المحسوسة والبصرية. التطبيق في الحياة الواقعية يعزز الدافعية والتعميم.</p>
+<h3>9.6 دعم السلوك</h3>
+<p>السلوك تواصل. حلّل السوابق والوظائف المحتملة (انتباه، هروب، حسي، الوصول إلى مواد) ونقص المهارات. فضّل التعديلات الاستباقية البيئية والتعليمية، وتعليم مهارات بديلة، والتعزيز الإيجابي على العواقب التفاعلية وحدها. أشرك المتعلم في فهم التوقعات والمراقبة الذاتية حيث يناسب.</p>
+<div class="example">متعلم في الابتدائي يغادر سجادة الحلقة الجماعية بعد 3–4 دقائق يومياً تقريباً. التحليل أظهر أن المدخلات طويلة وسمعية أساساً. التعديلات: مقاطع إدخال أقصر، جدول بصري لجلسة السجادة، بطاقة «استراحة حركة» يستخدمها مرة، وأداة حركة صغيرة. انخفضت المغادرة وارتفعت المشاركة.</div>
+<h3>9.7 تعزيز الاستقلالية وتقرير المصير</h3>
+<p>من السنوات المبكرة، وفّر فرصاً للاختيار وحل المشكلات والدعوة الذاتية. أشرك المتعلم في اجتماعات الخطة الفردية مع إعداد ودعم مناسبين. علّم اللغة والمهارات اللازمة لطلب المساعدة والتعبير عن التفضيلات ووضع أهداف شخصية. تجنّب الممارسات التي تخلق اعتماداً على راشد واحد.</p>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-strategies" onchange="saveNote('strategies',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 10 -->
+<section id="iep" class="tab-content" data-section="iep">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('iep')">تعيين كمقروء</button></div>
+<h2>10. التخطيط الفردي وخطط التعليم ونماذج الأهداف</h2>
+<h3>مبادئ التخطيط الفردي الفعال</h3>
+<ul>
+<li>تُطوَّر الخطط تعاونياً، وتشمل الأسرة، والمتعلم كعضو رئيسي حيثما أمكن.</li>
+<li>تُرتَّب الاجتماعات في أوقات مناسبة للأسرة.</li>
+<li>يُدرج مدخل المعالجين والجهات الأخرى عند دعمهم لتعليم المتعلم.</li>
+<li>مشاركة الطالب تنمّي الدعوة الذاتية؛ استخدم لغة واضحة، خاطب الطالب مباشرة، وأعدّه مسبقاً.</li>
+<li>تُراجع الخطط بانتظام؛ لا تُرحَّل الأهداف دون تحليل. الأهداف غير المحققة تدفع لتحليل الحواجز.</li>
+<li>يحتاج جميع الموظفين المعنيين (بما في ذلك معلمو المواد في الثانوي) تطويراً مهنياً في التخطيط التعاوني.</li>
+<li>تغطي الخطط التعلم الأكاديمي، والدمج الاجتماعي والصداقات، والتعديلات، والانتقال في العمر المناسب.</li>
+</ul>
+<h3>عملية مهنية من 8 خطوات</h3>
+<ol class="steps">
+<li>اجمع المعلومات: التحصيل، خصائص التعلم، الملف الصحي/الحسي، أولويات الأسرة، آراء المتعلم، تقارير العلاج.</li>
+<li>اعقد اجتماعاً تعاونياً: الأسرة، المتعلم (مدعوم)، معلم/معلمو الصف، منسق الاحتياجات، المعالجون المعنيون.</li>
+<li>حدد الأولويات: عدد قابل للإدارة من أهداف عالية الأثر تغطي الأكاديمي والاجتماعي والتواصل والاستقلالية.</li>
+<li>عرّف النتائج القابلة للقياس ومعايير النجاح.</li>
+<li>حدد التعديلات واستراتيجيات التدريس: من يفعل ماذا، بأي موارد، في أي سياقات.</li>
+<li>اتفق على تاريخ المراجعة والرصد المؤقت.</li>
+<li>وثّق ووزّع: ملف صفحة واحدة + الخطة الكاملة ميسّرة لكل من يعلّم أو يدعم.</li>
+<li>نفّذ، راقب، عدّل — اعتبر الخطة وثيقة حية.</li>
+</ol>
+<h3>نموذج هدف — ابتدائي</h3>
+<div class="template-box" id="iep-primary"><button class="copy-btn" onclick="copyText('iep-primary')">نسخ</button>
+<strong>المتعلم:</strong> _______________  <strong>التاريخ:</strong> ________  <strong>المراجعة:</strong> ________
+
+<strong>الهدف الأولوية 1 (قراءة/تواصل):</strong>
+بحلول [التاريخ]، سيقوم [الاسم] بشكل مستقل بـ[مهارة محددة] في [السياق] على [المعيار، مثل 4/5 فرص]، كما يسجّل [من].
+التعديلات: دعم بصري / وقت انتظار / تسجيل بديل / …
+من يدعم: معلم الصف، مساعد الدعم، أخصائي النطق
+مشاركة المتعلم: يساعد [الاسم] في اختيار النصوص / المواضيع.
+
+<strong>الهدف الأولوية 2 (اجتماعي / استقلالية):</strong>
+…
+<strong>شكل النجاح:</strong> …
+<strong>حواجز يجب مراقبتها:</strong> تقلب السمع، التعب، …
+</div>
+<h3>جذع هدف — السنوات المبكرة</h3>
+<div class="template-box" id="iep-ey"><button class="copy-btn" onclick="copyText('iep-ey')">نسخ</button>
+بحلول [التاريخ]، سيستخدم [الاسم] [إيماءة / إشارة / كلمة واحدة / عبارة] لطلب [عنصر/نشاط مفضل] في [الروتين] في 3 فرص متتالية مع تلميح بصري فقط.
+</div>
+<h3>جذع هدف — ثانوي / انتقال</h3>
+<div class="template-box" id="iep-sec"><button class="copy-btn" onclick="copyText('iep-sec')">نسخ</button>
+بحلول [التاريخ]، سيتبع [الاسم] بشكل مستقل جدولاً بصرياً شخصياً لليوم المدرسي، بما في ذلك الانتقال بين الحصص مع قرين أو خريطة، في 4 من 5 أيام، كما يلاحظ مرشد الصف / مساعد الدعم.
+الدعوة الذاتية: يمارس [الاسم] طلب التوضيح أو الوقت الإضافي باستخدام عبارة/بطاقة متفق عليها.
+</div>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-iep" onchange="saveNote('iep',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 11 -->
+<section id="collaboration" class="tab-content" data-section="collaboration">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('collaboration')">تعيين كمقروء</button></div>
+<h2>11. العمل مع الأسر والفرق متعددة التخصصات</h2>
+<h3>مبادئ شراكة الأسرة</h3>
+<ul>
+<li>الأسر ثابتة في حياة الطفل وتملك معرفة أساسية.</li>
+<li>الاحترام والشفافية والتواصل ثنائي الاتجاه يبنيان الثقة.</li>
+<li>يجب أن تكون الاجتماعات ميسّرة في التوقيت واللغة والشكل.</li>
+<li>احتفِ بالتقدم وشارك المخاوف مبكراً وبشكل بنّاء.</li>
+<li>ادعم الإخوة ونظام الأسرة الأوسع حيث يناسب وضمن الحدود المهنية.</li>
+</ul>
+<h3>الإعداد للاجتماعات وإدارتها</h3>
+<ol class="steps">
+<li>وضّح غرض الاجتماع والقرارات المطلوب اتخاذها.</li>
+<li>شارك المعلومات ذات الصلة مع الأسرة مسبقاً لتتمكن من الإعداد.</li>
+<li>ادعُ مشاركة المتعلم بمستوى يناسب عمره وتفضيله.</li>
+<li>استخدم لغة بسيطة؛ تجنّب المصطلحات غير المفسَّرة؛ تحقق من الفهم.</li>
+<li>خصص وقتاً للأسرة (والمتعلم) للكلام وطرح الأسئلة.</li>
+<li>اتفق على إجراءات ملموسة ومسؤوليات وجداول زمنية قبل الإغلاق.</li>
+<li>قدّم ملخصاً مكتوباً للقرارات والخطوات التالية.</li>
+</ol>
+<h3>التعاون متعدد الجهات</h3>
+<p>قد يدعم المتعلم أخصائيو النطق واللغة، والعلاج الوظيفي، والعلاج الطبيعي، وعلماء النفس التربويون، وأطباء الأطفال، وأخصائيو السمع، وأطباء العيون وغيرهم. يتطلب التعاون الفعال تعريفاً واضحاً للأدوار، وأهدافاً مشتركة، وآليات لتبادل المعلومات تحترم السرية وتمكن الدعم المتماسك.</p>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-collaboration" onchange="saveNote('collaboration',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 12 -->
+<section id="toolkit" class="tab-content" data-section="toolkit">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('toolkit')">تعيين كمقروء</button></div>
+<h2>12. حقيبة أدوات التنفيذ الصفّي</h2>
+<h3>12.1 ملف المتعلم من صفحة واحدة</h3>
+<div class="template-box" id="profile-template"><button class="copy-btn" onclick="copyText('profile-template')">نسخ</button>
+<strong>ملف المتعلم — صفحة واحدة</strong>
+الاسم: _______________  الصف/السنة: _____  التاريخ: ________
+
+<strong>ما يعجب الناس بي ويعجبون به:</strong>
+…
+
+<strong>ما هو مهم بالنسبة لي:</strong>
+…
+
+<strong>كيف يُفضَّل دعمي:</strong>
+• الرؤية: …
+• السمع: …
+• التواصل: …
+• التعلم: …
+• الحسي / الحركة: …
+• تنبيهات صحية: …
+
+<strong>كيف أُظهر أنني سعيد / منزعج / متألم:</strong>
+…
+
+<strong>الأصدقاء والعلاقات:</strong>
+…
+
+<strong>جهات الاتصال الرئيسية:</strong> الأسرة / منسق الاحتياجات / أخصائي النطق / العلاج الوظيفي / الطبي
+</div>
+<h3>12.2 قوائم تحقق الدرس</h3>
+<h4>قبل الدرس</h4>
+<div class="checklist">
+<label><input type="checkbox"> المفردات الأساسية مُعدّة مسبقاً مع صور</label>
+<label><input type="checkbox"> مواد عالية التباين / نص مكبّر جاهز</label>
+<label><input type="checkbox"> الجلوس محسَّن (رؤية + سمع)</label>
+<label><input type="checkbox"> خيار تسجيل بديل متوفر</label>
+<label><input type="checkbox"> جدول بصري / تسلسل الدرس ظاهر</label>
+<label><input type="checkbox"> اعتبارات التعب / الصحة ملحوظة</label>
+</div>
+<h4>أثناء الدرس</h4>
+<div class="checklist">
+<label><input type="checkbox"> تقديم متعدد الوسائط مستخدم</label>
+<label><input type="checkbox"> وقت انتظار/معالجة ممنوح</label>
+<label><input type="checkbox"> تفاعل الأقران ميسَّر</label>
+<label><input type="checkbox"> مساعد الدعم يدعم الاستقلالية لا يخلق اعتماداً</label>
+<label><input type="checkbox"> الفهم مُتحقق منه عبر الفعل/المنتج</label>
+</div>
+<h4>بعد الدرس</h4>
+<div class="checklist">
+<label><input type="checkbox"> التقدم نحو الأهداف الأكاديمية والاجتماعية مسجّل</label>
+<label><input type="checkbox"> ملاحظات السمع/الرؤية/التعب مسجّلة إن لزم</label>
+<label><input type="checkbox"> ما يُعدَّل في المرة القادمة محدد</label>
+</div>
+<h3>12.3 ما ينجح / ما لا ينجح</h3>
+<div class="compare-grid">
+<div class="compare-col compare-bad">
+<h4>أقل فعالية / يُتجنَّب</h4>
+<ul>
+<li>افتراض أن السمع سليم لأن لا حمى</li>
+<li>مدخلات طويلة سمعية فقط</li>
+<li>راشد واحد ملتصق بالمتعلم دائماً</li>
+<li>توقعات منخفضة / منهج ضيّق «من أجل الرشد»</li>
+<li>ترحيل أهداف الخطة سنة بعد سنة دون تحليل</li>
+<li>الحديث عن المتعلم بحضوره وكأنه غائب</li>
+</ul>
+</div>
+<div class="compare-col compare-good">
+<h4>ممارسة مبنية على الأدلة</h4>
+<ul>
+<li>افترض احتمالاً لتقلب السمع؛ متعدد الوسائط دائماً</li>
+<li>بصري + لفظي + تجريبي؛ مقاطع قصيرة</li>
+<li>المساعد ييسّر الأقران والاستقلالية</li>
+<li>منهج واسع ومتوازن + توقعات عالية</li>
+<li>راجع الأهداف؛ حلّل الحواجز؛ عدّل التدريس</li>
+<li>تكلم مع المتعلم وأشركه؛ ابنِ الدعوة الذاتية</li>
+</ul>
+</div>
+</div>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-toolkit" onchange="saveNote('toolkit',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 13 -->
+<section id="cases" class="tab-content" data-section="cases">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('cases')">تعيين كمقروء</button></div>
+<h2>13. دراسات الحالة</h2>
+<div class="case-box">
+<h4>الحالة 1 — ابتدائي: «يغادر السجادة فقط»</h4>
+<p><strong>الوضع:</strong> طفل في السابعة يغادر مدخلات الحلقة الجماعية بعد 3–4 دقائق تقريباً كل يوم. استخدم الموظفون سابقاً تذكيرات لفظية متكررة وإخراجاً أحياناً.</p>
+<p><strong>التحليل:</strong> المدخلات طويلة وسمعية أساساً. احتمال تقلب سمع + حمل ذاكرة عاملة + حاجة للحركة.</p>
+<p><strong>الاستجابة:</strong> مقاطع إدخال أقصر؛ جدول بصري لجلسة السجادة؛ بطاقة «استراحة حركة» مرة واحدة؛ أداة حركة صغيرة؛ جلوس مواجه للمتحدث. انخفضت المغادرة وارتفعت المشاركة.</p>
+<p><strong>الخلاصة:</strong> السلوك تواصل ← غيّر البيئة والتدريس أولاً.</p>
+</div>
+<div class="case-box">
+<h4>الحالة 2 — ثانوي: «لا تستطيع العلوم»</h4>
+<p><strong>الوضع:</strong> طالبة في الرابعة عشرة سُحبت من حصص العلوم العملية «لأنها لن تحتاجها».</p>
+<p><strong>التحليل:</strong> انتهاك لمبدأ تكافؤ الفرص؛ افتراضات عن الفائدة المستقبلية حدّت التعلم.</p>
+<p><strong>الاستجابة:</strong> أُعيدت مع تعديلات (تعليمات بصرية، شريك قرين، تسجيل بديل للنتائج، مفردات مسبقة). شاركت بجدية وازدادت ثقتها.</p>
+<p><strong>الخلاصة:</strong> المنهج الواسع المتوازن حق؛ عدّل ولا تستبعد افتراضياً.</p>
+</div>
+<div class="case-box">
+<h4>الحالة 3 — سنوات مبكرة: طلبات لفظية محدودة</h4>
+<p><strong>الوضع:</strong> طفل في الرابعة يقود الراشد بيده غالباً. إحباط وضرب أحياناً عند عدم الفهم.</p>
+<p><strong>الاستجابة:</strong> إشارات كلمات مفتاحية ثابتة + لوحة اختيار بصرية للأنشطة المفضلة؛ يُنمذج الراشدون وينتظرون؛ يُحتفى بأي محاولة تواصل. انخفض الضرب مع ازدياد التواصل الوظيفي.</p>
+<p><strong>الخلاصة:</strong> علّم طريقة أكثر فعالية للتواصل؛ قلّل الحاجة إلى السلوك.</p>
+</div>
+<div class="case-box">
+<h4>الحالة 4 — التعب و«عدم الامتثال»</h4>
+<p><strong>الوضع:</strong> متعلم يرفض مهام بعد الظهر بشكل متزايد؛ وُصف بأنه غير ممتثل.</p>
+<p><strong>التحليل:</strong> احتمال تعب مرتبط بحالة قلبية أو نوم (انقطاع نفس) أو حمل معرفي تراكمي. السلوك أشار إلى إرهاق لا عصيان متعمد.</p>
+<p><strong>الاستجابة:</strong> مراجعة الخطة الصحية مع الأسرة؛ تعديل جدول بعد الظهر؛ إدراج راحة/حركة؛ تقليل المطالب المتزامنة. انخفض «الرفض».</p>
+<p><strong>الخلاصة:</strong> فكّر دائماً في العوامل الطبية والطاقة قبل تأطير السلوك على أنه دافعي بحت.</p>
+</div>
+<label class="notes-label">ملاحظاتك / حالاتك:</label>
+<textarea class="notes-area" id="notes-cases" onchange="saveNote('cases',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 14 -->
+<section id="redflags" class="tab-content" data-section="redflags">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('redflags')">تعيين كمقروء</button></div>
+<h2>14. إشارات التحذير ومتى تُحيل</h2>
+<div class="box-red">
+<strong>اطلب تدخلاً طبياً / متخصصاً فورياً إذا لاحظت:</strong>
+<ul>
+<li>تغيّراً مفاجئاً أو غير مفسَّر في السلوك أو المزاج أو المشاركة أو المهارات</li>
+<li>ازدياداً ملحوظاً في النعاس النهاري أو صعوبات الانتباه (فكّر في انقطاع النفس أثناء النوم)</li>
+<li>علامات ألم لا يستطيع المتعلم التعبير عنها بوضوح</li>
+<li>تدهوراً في الاستجابة السمعية أو سلوكيات مرتبطة بالرؤية</li>
+<li>ألم رقبة أو وضعية رأس غير معتادة أو تغيّراً عصبياً (قلق الفقرات العنقية — نصيحة طبية عاجلة)</li>
+<li>تعباً مستمراً يتجاوز النمط المعتاد (قلب، غدة درقية، نوم، عدوى)</li>
+<li>تراجعاً في مهارات سبق اكتسابها</li>
+</ul>
+</div>
+<p>شارك دائماً مع الأسرة واتبع بروتوكولات الحماية والصحة المدرسية. يلاحظ المعلمون الأنماط؛ التشخيص والعلاج من اختصاص المهنيين الصحيين.</p>
+<label class="notes-label">ملاحظاتك:</label>
+<textarea class="notes-area" id="notes-redflags" onchange="saveNote('redflags',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 15 -->
+<section id="pdpath" class="tab-content" data-section="pdpath">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('pdpath')">تعيين كمقروء</button></div>
+<h2>15. مسار التطوير المهني</h2>
+<h3>معلم مبتدئ / جديد على متلازمة داون</h3>
+<ol>
+<li>اقرأ الأقسام 1–3 و9 (الأسس + الخصائص + الاستراتيجيات).</li>
+<li>أكمل ملف الصفحة الواحدة لمتعلم تدعمه.</li>
+<li>استخدم قوائم التحقق قبل/أثناء/بعد لمدة أسبوع.</li>
+<li>أجرِ التقييم الذاتي بالأسئلة المتعددة؛ راجع المجالات الضعيفة.</li>
+</ol>
+<h3>ممارسة نامية</h3>
+<ol>
+<li>عمّق الأقسام 4 و6 و10 و12 (الحقوق، التدريس، الخطط، الأدوات).</li>
+<li>اكتب وراجع هدفاً تعاونياً واحداً باستخدام النماذج.</li>
+<li>حلّل سلوكاً واحداً بمنهج دراسة الحالة.</li>
+<li>ظلّ أو خطّط مع أخصائي نطق / زميل ذي خبرة.</li>
+</ol>
+<h3>قيادة / تخصص</h3>
+<ol>
+<li>الأقسام 5 و11 و14 و15 + الإرشادات الكاملة (Faragher وآخرون، 2020).</li>
+<li>قدّ تأهيل الموظفين باستخدام خطوات القسم 5.</li>
+<li>راجع ممارسة الدمج على مستوى المدرسة مقابل جدول «ما ينجح».</li>
+<li>أرشد الزملاء وساهم في السياسة.</li>
+</ol>
+<label class="notes-label">أهداف تطويرك المهني:</label>
+<textarea class="notes-area" id="notes-pdpath" onchange="saveNote('pdpath',this.value)"></textarea>
+</div>
+</section>
+
+<!-- 16 -->
+<section id="glossary" class="tab-content" data-section="glossary">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('glossary')">تعيين كمقروء</button></div>
+<h2>16. المسرد</h2>
+<table>
+<thead><tr><th>المصطلح</th><th>التعريف</th></tr></thead>
+<tbody>
+<tr><td>عدم استقرار الفقرات العنقية</td><td>حركة زائدة بين الفقرتين الأولى والثانية؛ مهم للتربية البدنية؛ يتطلب نصيحة طبية</td></tr>
+<tr><td>فقدان السمع التوصيلي</td><td>مشكلة في الأذن الخارجية أو الوسطى (غالباً أذن صمغية)؛ متقلب</td></tr>
+<tr><td>الأذن الصمغية</td><td>سائل في الأذن الوسطى؛ شائع جداً في طفولة متلازمة داون</td></tr>
+<tr><td>نقص التوتر العضلي</td><td>انخفاض توتر العضلات</td></tr>
+<tr><td>خطة التعليم الفردية</td><td>وثيقة أهداف وتعديلات ودعم تُطوَّر تعاونياً وتعيش بالمراجعة</td></tr>
+<tr><td>الدمج (بمعنى الاتفاقية)</td><td>يتحول النظام لينتمي الجميع ويتعلموا مع الدعم</td></tr>
+<tr><td>عدم الانفصال</td><td>فشل انفصال الكروموسومات؛ السبب الرئيسي لتثلث 21</td></tr>
+<tr><td>تقرير المصير</td><td>اتخاذ الخيارات ووضع الأهداف والدعوة للنفس</td></tr>
+<tr><td>تثلث الصبغي 21</td><td>ثلاث نسخ من الكروموسوم 21</td></tr>
+<tr><td>اتفاقية الأمم المتحدة</td><td>اتفاقية حقوق الأشخاص ذوي الإعاقة (2006)</td></tr>
+<tr><td>الذاكرة العاملة</td><td>الاحتفاظ المؤقت بالمعلومات ومعالجتها</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- 17 -->
+<section id="mcq" class="tab-content" data-section="mcq">
+<div class="section-card">
+<div class="toolbar"><button onclick="markRead('mcq')">تعيين كمقروء</button></div>
+<h2>17. التقييم الذاتي بأسئلة متعددة الخيارات</h2>
+<div class="quiz-q" data-correct="b"><h4>س1. أفضل وصف للتعليم الدامج وفق الاتفاقية والإرشادات؟</h4><div class="quiz-opts"><label><input type="radio" name="q1" value="a"> يجب أن يتكيف الطالب مع متطلبات التيار العام القائمة</label><label><input type="radio" name="q1" value="b"> يتحول النظام ليُرحَّب بالجميع في بيئات محلية مناسبة للعمر مع الدعم اللازم</label><label><input type="radio" name="q1" value="c"> التعليم فقط في مدارس متخصصة منفصلة</label><label><input type="radio" name="q1" value="d"> ينتهي التعلم بعد المرحلة الثانوية</label></div><div class="quiz-feedback"></div></div>
+<div class="quiz-q" data-correct="c"><h4>س2. ملف الذاكرة النموذجي؟</h4><div class="quiz-opts"><label><input type="radio" name="q2" value="a"> قوي سمعياً-لفظياً وضعيف بصرياً</label><label><input type="radio" name="q2" value="b"> لا نمط مميز</label><label><input type="radio" name="q2" value="c"> قوة نسبية بصرية مقابل صعوبة في الذاكرة العاملة السمعية-اللفظية</label><label><input type="radio" name="q2" value="d"> عجز عن تكوين ذاكرة طويلة المدى</label></div><div class="quiz-feedback"></div></div>
+<div class="quiz-q" data-correct="a"><h4>س3. لماذا يُعد تقلب الأذن الصمغية حاسماً؟</h4><div class="quiz-opts"><label><input type="radio" name="q3" value="a"> شائع جداً، غالباً بلا علامات ظاهرة، يتقلب، ويصيب ذروة تطور اللغة</label><label><input type="radio" name="q3" value="b"> يحدث فقط لدى البالغين</label><label><input type="radio" name="q3" value="c"> يصحبه دائماً إفراز ظاهر</label><label><input type="radio" name="q3" value="d"> يدمر العصب السمعي نهائياً</label></div><div class="quiz-feedback"></div></div>
+<div class="quiz-q" data-correct="d"><h4>س4. أفضل ممارسة لخطة التعليم الفردية؟</h4><div class="quiz-opts"><label><input type="radio" name="q4" value="a"> يكتب المختص الأهداف وحده</label><label><input type="radio" name="q4" value="b"> ترحيل الأهداف دون تغيير كل سنة</label><label><input type="radio" name="q4" value="c"> استبعاد المتعلم من الاجتماعات</label><label><input type="radio" name="q4" value="d"> تعاونية، تُراجع، تُحلَّل الحواجز، أهداف أكاديمية واجتماعية</label></div><div class="quiz-feedback"></div></div>
+<div class="quiz-q" data-correct="b"><h4>س5. التعلم في مرحلة الرشد؟</h4><div class="quiz-opts"><label><input type="radio" name="q5" value="a"> يتوقف فعلياً بعد المدرسة</label><label><input type="radio" name="q5" value="b"> يستمر مدى الحياة؛ أسطورة التوقف دُحضت</label><label><input type="radio" name="q5" value="c"> ورش محمية فقط مناسبة</label><label><input type="radio" name="q5" value="d"> أوقف القراءة والكتابة عند 14</label></div><div class="quiz-feedback"></div></div>
+<button class="btn" onclick="scoreQuiz()">احسب النتيجة</button>
+<p id="quizScore" style="margin-top:.7rem;font-weight:600"></p>
+</div>
+</section>
+
+<!-- 18 -->
+<section id="flashcards" class="tab-content" data-section="flashcards">
+<div class="section-card">
+<div class="toolbar"><button onclick="markRead('flashcards')">تعيين كمقروء</button></div>
+<h2>18. البطاقات القلّابة</h2>
+<p>انقر للقلب.</p>
+<div class="flash-grid">
+<div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front">السبب الأكثر شيوعاً لمتلازمة داون؟</div><div class="flash-back">تثلث الصبغي 21 عبر عدم الانفصال (~95٪)</div></div></div>
+<div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front">الدمج الحقيقي مقابل الدمج الشكلي؟</div><div class="flash-back">الشكلي = يتكيف الطالب مع النظام. الحقيقي = يتكيف النظام مع التنوع.</div></div></div>
+<div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front">لماذا نفترض احتمال ضعف السمع؟</div><div class="flash-back">الأذن الصمغية شائعة ومتقلبة وغالباً بلا علامات ظاهرة؛ وتصيب فترة ذروة تطور اللغة.</div></div></div>
+<div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front">تعديل بصري أساسي؟</div><div class="flash-back">تباين عالٍ (أسود على أبيض، خطوط مغلّظة)؛ تكبير؛ جلوس مناسب.</div></div></div>
+<div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front">أسطورة توقف التعلم؟</div><div class="flash-back">دُحضت. التعلم يستمر إلى الرشد؛ التعلم مدى الحياة حق.</div></div></div>
+<div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front">لغة الشخص أولاً؟</div><div class="flash-back">«متعلم من ذوي متلازمة داون» — الشخص أولاً والحالة ثانياً.</div></div></div>
+<div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front">نقطة قوة إدراكية نسبية؟</div><div class="flash-back">المعالجة والذاكرة البصرية مقابل الذاكرة العاملة السمعية-اللفظية.</div></div></div>
+<div class="flashcard" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="flash-front">عند فشل هدف الخطة؟</div><div class="flash-back">حلّل الحواجز (تدريس، دعم، بيئة)؛ عدّل — لا ترحّل فقط.</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- 19 -->
+<section id="quickref" class="tab-content" data-section="quickref">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('quickref')">تعيين كمقروء</button></div>
+<h2>19. بطاقات مرجع سريع</h2>
+<div class="quick-ref"><h3>أساسيات الصف اليومية</h3><ul><li>دعم بصري عالي التباين + بطاقات مفردات</li><li>واجه المتعلم؛ قلّل الضوضاء؛ افترض احتمالاً لهبوط سمعي</li><li>تجزيء + وقت انتظار + متعدد الوسائط</li><li>المساعد يعزز الأقران والاستقلالية</li><li>طرق بديلة لإظهار التعلم</li><li>راقب التعب والتغيّر السلوكي ← سبب طبي محتمل</li></ul></div>
+<div class="quick-ref"><h3>أساسيات الاجتماع / الخطة الفردية</h3><ul><li>أسرة + متعلم + معلمون + معالجون معنيون</li><li>لغة بسيطة؛ ملخص مكتوب للقرارات</li><li>أهداف قابلة للقياس؛ معايير نجاح؛ من يفعل ماذا</li><li>تاريخ مراجعة؛ تحليل الحواجز إن لم تتحقق</li><li>ملف صفحة واحدة محدّث ومشارك</li></ul></div>
+</div>
+</section>
+
+<!-- 20 -->
+<section id="references" class="tab-content" data-section="references">
+<div class="section-card">
+<div class="toolbar"><button onclick="printCurrent()">طباعة</button><button onclick="markRead('references')">تعيين كمقروء</button></div>
+<h2>20. المراجع وسجل الإصدارات</h2>
+<h3>المصادر الأساسية</h3>
+<ul>
+<li>Newton, R. (2004). <em>The Down’s Syndrome Handbook</em>. Vermilion / جمعية متلازمة داون.</li>
+<li>Chitty, A. &amp; Dawson, V. (2010). <em>Down’s Syndrome: The Essential Guide</em>. Need2Know.</li>
+<li>Faragher, R., Robertson, P. &amp; Bird, G. (2020). <em>International Guidelines for the Education of Learners with Down Syndrome</em>. Down Syndrome International.</li>
+</ul>
+<h3>مصادر داعمة مختارة</h3>
+<ul>
+<li>Buckley وآخرون (2006)؛ de Graaf وآخرون (2013)؛ Hehir وآخرون (2016)؛ Laws وHall (2014)؛ Torr وآخرون (2010)؛ اتفاقية الأمم المتحدة (2006)؛ التعليق العام رقم 4 للجنة الاتفاقية (2016)؛ اليونسكو (2019).</li>
+</ul>
+<h3>منظمات</h3>
+<ul>
+<li>Down Syndrome International — ds-int.org</li>
+<li>جمعية متلازمة داون (المملكة المتحدة) والجمعيات الوطنية والإقليمية</li>
+</ul>
+<h3>النسخة النهائية</h3>
+<p>محتوى موسّع في الأقسام التعليمية الأساسية مع الاحتفاظ بكل ميزات الإصدارات السابقة: حقيبة الأدوات، دراسات الحالة، إشارات التحذير، مسار التطوير، البحث، الوضع الليلي، الملاحظات، التقدم، النماذج، قوائم التحقق، المرجع السريع.</p>
+<p><strong>إعداد: جاسر بنتن</strong></p>
+<div class="box-info">هذه الأداة للتطوير المهني والمرجع التعليمي. اجمعها دائماً مع السياسة المحلية الحالية، والتقييم الفردي، ونصيحة الفريق متعدد التخصصات.</div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<p>أداة المرجع المهني لمعلمي متلازمة داون — النسخة النهائية المتقدمة</p>
+<p><strong>إعداد: جاسر بنتن</strong></p>
+<p>مبنية على نيوتن (2004) · تشيتي وداوسون (2010) · Faragher وآخرين / DSi (2020)</p>
+<p>ملف واحد يعمل دون اتصال · الملاحظات تُحفظ في متصفحك فقط</p>
+</footer>
+
+<script>
+const SECTIONS=['intro','understanding','characteristics','rights','leading','teaching','ages','health','strategies','iep','collaboration','toolkit','cases','redflags','pdpath','glossary','mcq','flashcards','quickref','references'];
+function switchTab(id){document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));const el=document.getElementById(id);if(el)el.classList.add('active');document.querySelectorAll('.nav-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));const sel=document.getElementById('mobileSelect');if(sel)sel.value=id;document.getElementById('searchResults').classList.remove('visible');window.scrollTo({top:0,behavior:'smooth'});loadNote(id)}
+function toggleDark(){const h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'':'dark');localStorage.setItem('ds-theme-ar',h.getAttribute('data-theme')||'')}
+function printCurrent(){window.print()}
+function saveNote(s,t){localStorage.setItem('ds-note-ar-'+s,t)}
+function loadNote(s){const ta=document.getElementById('notes-'+s);if(ta)ta.value=localStorage.getItem('ds-note-ar-'+s)||''}
+function exportNotes(){let out='أداة معلمي متلازمة داون — ملاحظات شخصية\n\n';SECTIONS.forEach(s=>{const n=localStorage.getItem('ds-note-ar-'+s);if(n&&n.trim())out+='=== '+s+' ===\n'+n+'\n\n'});const b=new Blob([out],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='ملاحظات_اداة_متلازمة_داون.txt';a.click()}
+function markRead(s){const r=JSON.parse(localStorage.getItem('ds-read-ar')||'[]');if(!r.includes(s)){r.push(s);localStorage.setItem('ds-read-ar',JSON.stringify(r))}updateProgress()}
+function updateProgress(){const r=JSON.parse(localStorage.getItem('ds-read-ar')||'[]');const p=Math.round((r.length/SECTIONS.length)*100);document.getElementById('progressFill').style.width=p+'%';document.getElementById('progressText').textContent=r.length+'/'+SECTIONS.length}
+function copyText(id){const el=document.getElementById(id);const t=el.innerText.replace(/^نسخ\n?/,'');navigator.clipboard.writeText(t).then(()=>alert('تم النسخ'))}
+function runSearch(q){const box=document.getElementById('searchResults');if(!q||q.length<2){box.classList.remove('visible');return}const ql=q.toLowerCase();const hits=[];SECTIONS.forEach(id=>{const sec=document.getElementById(id);if(sec&&sec.innerText.toLowerCase().includes(ql)){const title=sec.querySelector('h2')?sec.querySelector('h2').innerText:id;hits.push({id,title})}});box.innerHTML=hits.length===0?'لا نتائج.':'<strong>النتائج:</strong><br>'+hits.map(h=>'<a onclick="switchTab(\''+h.id+'\')">'+h.title+'</a>').join('');box.classList.add('visible')}
+document.querySelectorAll('.quiz-q').forEach(q=>{q.querySelectorAll('input[type=radio]').forEach(input=>{input.addEventListener('change',()=>{const fb=q.querySelector('.quiz-feedback');if(input.value===q.dataset.correct){fb.className='quiz-feedback correct';fb.textContent='صحيح.'}else{fb.className='quiz-feedback incorrect';fb.textContent='راجع القسم ذي الصلة.'}})})});
+function scoreQuiz(){let c=0;const total=document.querySelectorAll('.quiz-q').length;document.querySelectorAll('.quiz-q').forEach(q=>{const s=q.querySelector('input:checked');if(s&&s.value===q.dataset.correct)c++});document.getElementById('quizScore').textContent='النتيجة: '+c+' / '+total}
+(function(){if(localStorage.getItem('ds-theme-ar')==='dark')document.documentElement.setAttribute('data-theme','dark');updateProgress();loadNote('intro')})();
+</script>
+</body>
+</html>
